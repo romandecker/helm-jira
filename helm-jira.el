@@ -134,7 +134,7 @@
                          (funcall callback (elt (alist-get 'detail data) 0))))))
 
 (defun helm-jira-build-candidate-list-from-issues (issues)
-  "Take `ISSUES' as returned by helm-jira-fetch-issues and build a suitable candidate list for helm with it."
+  "Take `ISSUES' as returned by ‘helm-jira-fetch-issues’ and build a suitable candidate list for helm with it."
   (mapcar
    (lambda (issue)
      (let* ((key (alist-get 'key issue))
@@ -145,7 +145,7 @@
 
 
 (defun helm-jira-build-candidate-list-from-pull-requests (pull-requests)
-  "Take `PULL-REQUESTS' as returned by helm-jira-fetch-pull-requests and build a suitable candidate list for helm with it."
+  "Take `PULL-REQUESTS' as returned by ‘helm-jira-fetch-pull-requests’ and build a suitable candidate list for helm with it."
   (mapcar
    (lambda (pr)
      (let* ((title (alist-get 'title pr))
