@@ -1,7 +1,7 @@
 ;;; helm-jira.el --- Helm bindings for JIRA/Bitbucket/stash -*- lexical-binding: t -*-
 
 ;; Author: Roman Decker <roman dot decker at gmail dot com>
-;; URL: https://github.com/DeX3/general.el
+;; URL: https://github.com/DeX3/helm-jira
 ;; Created: July 19, 2018
 ;; Keywords: tools, helm, jira, bitbucket, stash
 ;; Package-Requires: ((emacs "25") (cl-lib "0.5") (helm "1.9.9"))
@@ -33,44 +33,31 @@
 
 (defcustom helm-jira-url nil
   "JIRA url to use, should include protocol and not end in a slash."
-  :group 'helm-jira
   :type 'string)
 
 (defcustom helm-jira-stash-url nil
   "Stash url to use (for bitbucket API, should include protocol and not end in a slash)."
-  :group 'helm-jira
-  :type 'string
-  :initialize 'custom-initialize-set)
+  :type 'string)
 
 (defcustom helm-jira-board-id nil
   "ID of the JIRA-board you want to work with."
-  :group 'helm-jira
-  :type 'integer
-  :initialize 'custom-initialize-set)
+  :type 'integer)
 
 (defcustom helm-jira-username nil
   "Username to use when logging in to JIRA."
-  :group 'helm-hira
-  :type 'integer
-  :initialize 'custom-initialize-set)
+  :type 'integer)
 
 (defcustom helm-jira-password nil
   "Password to use when logging in to JIRA.  Not recommended to set this (helm-jira will save password per session)."
-  :group 'helm-jira
-  :type 'string
-  :initialize 'custom-initialize-set)
+  :type 'string)
 
 (defcustom helm-jira-project nil
   "The JIRA project to use for bitbucket API requests."
-  :group 'helm-jira
-  :type 'string
-  :initialize 'custom-initialize-set)
+  :type 'string)
 
 (defcustom helm-jira-repo nil
   "The BitBucket repo to use for bitbucket API requests."
-  :group 'helm-jira
-  :type 'string
-  :initialize 'custom-initialize-set)
+  :type 'string)
 
 (defun helm-jira-build-basic-auth-token ()
   "Build the base64-encoded auth token from `helm-jira-username' and `helm-jira-password'."
